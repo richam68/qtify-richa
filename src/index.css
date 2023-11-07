@@ -13,8 +13,9 @@
 /* 2.Remove default margin */
 *{
   margin: 0;
-  /* width: 100vw;
-  max-width: 1440px;  */
+  width: 100vw;
+  max-width: 1440px; 
+  /* width: 100vw */
 }
 
 /* Typograhical Tweak!

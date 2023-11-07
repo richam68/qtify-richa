@@ -5,35 +5,18 @@
 }
 .middle-section {
   display: flex;
-  width: 799px ;
-  height: 212px;
-  justify-content: flex-start;
-  padding: 29px 0 0 327px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   font-family: "Poppins", sans-serif;
   color: var(--css-white);
 }
-.paragraph {
-    flex: 1;
-}
-.para-first, .para-second {
-    font-size: 32px;
-    font-weight: 600;
-    line-height: 48px;
-  };
-
-  /* .para-first {
-    width: 473px;
-  }
-  
-  .para-second {
-    width: 556px;
-  } */
 .headphone-container {
   width: 212px;
   height: 212px;
-  padding: 29px 0 0 0;
 }
 .headphone {
-  width: 116.63px;
-  height: 117.08px;
+  width: 100%;
+  height: 100%;
 }

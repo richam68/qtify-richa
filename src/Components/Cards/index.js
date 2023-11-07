@@ -1,4 +1,4 @@
-import "./Cards.css";
+import "./cards.css";
 import NewAlbum from "./NewAlbums";
 
 export default function Card() {

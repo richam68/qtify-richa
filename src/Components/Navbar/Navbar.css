@@ -1,9 +1,7 @@
-/* .navbar-container{
-   
-} */
+
 .navbar{
-    /* width: 100%; */
-    width: 100vw;
+    width: 100%;
+    /* width: 100vw; */
     display: flex;
     height: 74px;
     background-color: var(--css-primary);

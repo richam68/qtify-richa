@@ -1,12 +1,13 @@
-import "./HeroSection.css";
+import "./herosection.css";
 
 export default function HeroSection() {
   return (
     <div className="hero-section">
       <div className="middle-section">
-      <div className="paragraph">
-          <p className="para-first">100 Thousand Songs,ad-free</p>
-          <p className="para-second">Over thousands podcast episodes</p>
+
+      <div>
+          <h1>100 Thousand Songs, ad-free</h1>
+          <h1>Over thousands podcast episodes</h1>
       </div>
       
         <div className="headphone-container">
