@@ -1,0 +1,33 @@
+*{
+    font-family: "Poppins", sans-serif;
+}
+
+.card-body {
+  height: 762px;
+  background-color: var(--css-black);
+}
+.card-section {
+  height: 592px;
+  width: 1384x;
+}
+.btn-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+.btn {
+  height: 36px;
+  font-size: 20px;
+  line-height: 30px;
+  border: none;
+  outline: none;
+  background: none;
+
+ } 
+.card-container{
+    height: 232px;
+    display: flex;
+    justify-content: space-between;
+    color: var(--css-white);
+}
+

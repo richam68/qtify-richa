@@ -1,12 +1,16 @@
 import './App.css';
 import Navbar from "./Components/Navbar"
+import HeroSection from './Components/HeroSection';
+import Card from './Components/Cards';
 
 
 function App() {
   return (
-    <div className="App">
+    <>
     <Navbar />
-    </div>
+    <HeroSection/>
+    <Card/>
+    </>
   );
 }
 

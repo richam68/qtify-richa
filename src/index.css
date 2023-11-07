@@ -13,6 +13,8 @@
 /* 2.Remove default margin */
 *{
   margin: 0;
+  /* width: 100vw;
+  max-width: 1440px;  */
 }
 
 /* Typograhical Tweak!
@@ -20,8 +22,9 @@
 4. Improve Text-rendering */
 
 body{
+  margin: 0px;
   line-height: 1.5;
-  -webkit-font-smoothing: antialiased 
+  -webkit-font-smoothing: antialiased ;
   /* //it is for safari */
 }
 
