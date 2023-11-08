@@ -1,5 +1,4 @@
 import "./cards.css";
-
 export default function Card() {
   return (
     <div className="card-wrapper">
@@ -11,9 +10,9 @@ export default function Card() {
           />
         </div>
         <div className="card-content">
-          <div className="card-pill">
-            <p>100 Follows</p>
-          </div>
+          <span className="card-pill">
+           100 Follows
+           </span>
         </div>
       </div>
 
