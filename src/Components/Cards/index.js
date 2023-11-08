@@ -1,57 +1,23 @@
 import "./cards.css";
-import NewAlbum from "./NewAlbums";
 
 export default function Card() {
   return (
-    <div className="card-body">
-      <div className="card-section">
-        <div className="btn-container">
-          <button className="btn" style={{ color: " #fff" }}>
-            Top Albums
-          </button>
-          <button className="btn" style={{ color: "#34C94B" }}>
-            Show All
-          </button>
+    <div className="card-wrapper">
+      <div className="card">
+        <div className="card-img-frame">
+          <img
+            src="https://images.pexels.com/photos/1047442/pexels-photo-1047442.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=800"
+            alt="card-pic"
+          />
         </div>
-        <div className="card-container">
-          <div>
-            <img src="Group 7479.png" alt="cardimage1" />
-            <p>New Bollywood</p>
+        <div className="card-content">
+          <div className="card-pill">
+            <p>100 Follows</p>
           </div>
-
-          <div>
-            <img src="Group 7480.png" alt="cardimage1" />
-            <p>New Bollywood</p>
-          </div>
-
-          <div>
-            <img src="Group 7479.png" alt="cardimage1" />
-            <p>New Bollywood</p>
-          </div>
-          <div>
-            <img src="Group 7480.png" alt="cardimage1" />
-            <p>New Bollywood</p>
-          </div>
-          <div>
-            <img src="Group 7479.png" alt="cardimage1" />
-            <p>New Bollywood</p>
-          </div>
-          <div>
-            <img src="Group 7479.png" alt="cardimage1" />
-            <p>New Bollywood</p>
-          </div>
-          <div>
-            <img src="Group 7479.png" alt="cardimage1" />
-            <p>New Bollywood</p>
-          </div>
-
         </div>
-        <br/>
-        <NewAlbum/>
-
-
       </div>
 
+      <p className="card-label">New Bollywood</p>
     </div>
   );
 }
