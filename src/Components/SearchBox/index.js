@@ -1,5 +1,5 @@
 import {ReactComponent as SearchIcon} from "./search-icon.svg";
-import "./SearchBox.css"
+import "./searchbox.css"
 
 export default function SearchBox(){
     return(
