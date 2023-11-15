@@ -1,22 +1,26 @@
+
 import "./cards.css";
-export default function Card() {
+
+
+export default function Card({imageSrc, follows, title}) {
+
   return (
     <div className="card-wrapper">
       <div className="card">
-        <div className="card-img-frame">
+        <div className="card-img-frame" >
           <img
-            src="https://images.pexels.com/photos/1047442/pexels-photo-1047442.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=800"
+            src={imageSrc}
             alt="card-pic"
           />
         </div>
         <div className="card-content">
           <span className="card-pill">
-           100 Follows
+           {follows}
            </span>
         </div>
       </div>
 
-      <p className="card-label">New Bollywood</p>
+      <p className="card-label">{title}</p>
     </div>
   );
 }
