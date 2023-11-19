@@ -1,7 +1,7 @@
 import React from 'react'
 import "./searchAlbum.css"
 const SearchAlbumPage = ({filterSearch}) => {
-    console.log(">>>", filterSearch)
+    // console.log(">>>", filterSearch)
   return (
     <div className='album-container'>
 {filterSearch.map((item, index) => {

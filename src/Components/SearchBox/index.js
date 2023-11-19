@@ -11,7 +11,7 @@ export default function SearchBox({ topAlbum, setTopAlbum }) {
   console.log("Search page", topAlbum);
 
   const handleChange = (e) => {
-    console.log(e.target.value);
+    // console.log(e.target.value);
     setTitle(e.target.value);
     setpopup(true);
 
@@ -19,17 +19,17 @@ export default function SearchBox({ topAlbum, setTopAlbum }) {
       return item.title.toLowerCase().includes(e.target.value.toLowerCase());
     });
     setFilterSearch(filter);
-    console.log("filter data", filter);
+    // console.log("filter data", filter);
   };
 
   const searchApi = async () => {
-    console.log("search api function");
+    // console.log("search api function");
     let res = await axios.get(`https://qtify-backend-labs.crio.do/albums/top`);
     setFilterSearch(res.data);
   };
 
   useEffect(() => {
-    console.log("useEffect");
+    // console.log("useEffect");
     searchApi();
   }, [title]);
 

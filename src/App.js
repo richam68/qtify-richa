@@ -14,8 +14,6 @@ function App() {
   const [filteredDataValues, setFilteredDataValues] = useState([]);
   const [value, setValue] = useState(0);
 
-   const delay = (ms) => {new Promise((resolve) => setTimeout(resolve, ms))}
-
   const topAlbumApi = async () => {
     await axios
       .get(`${ENDPOINT}albums/top`)
@@ -23,7 +21,6 @@ function App() {
         console.log("data", data);
         setTopAlbum(data);
       })
-       await delay(1000)
       .catch((error) => {
         console.error("Error fetching top albums:", error);
       });
@@ -47,33 +44,17 @@ function App() {
     });
   };
 
-  const makeRequestRetry = async(apiFun) => {
-  try{
-   await apiFun();
-  }catch(error){
-    if (error.response && error.response.status === 429){
-      console.log("Rate limited, retrying after 5 seconds...");
-      await delay(5000); // Wait for 5 seconds and then retry
-      await apiFun();
-    } else {
-      console.error("Error:", error);
-    }
-  }
-  }
   useEffect(() => {
-    //topAlbumApi();
-    // newAlbumApi()
-    // songsAlbum()
-    makeRequestRetry(() => topAlbumApi());
-    makeRequestRetry(()=> newAlbumApi()) ;
-    makeRequestRetry(() => songsAlbum());
+    topAlbumApi();
+    newAlbumApi()
+    songsAlbum()
   }, []);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
 
-  const mergingData = [...topAlbum, ...newAlbum, ...songs];
+  // const mergingData = [...topAlbum, ...newAlbum, ...songs];
 
   let generateSongsData = (value) => {
     let key;
@@ -99,7 +80,7 @@ function App() {
   };
   useEffect(() => {
     generateSongsData(value);
-  }, [value]);
+  },[value]);
 
   return (
     <div>
