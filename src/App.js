@@ -80,7 +80,7 @@ function App() {
   };
   useEffect(() => {
     generateSongsData(value);
-  },[value]);
+  });
 
   return (
     <div>
