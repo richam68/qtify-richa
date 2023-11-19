@@ -20,3 +20,10 @@
     align-items:center;
     padding: 8px
 }
+.popup{
+    position: absolute;
+    width: 773px;
+    height: 455px;
+    background-color: var(--css-black);
+    top: 73px;
+}

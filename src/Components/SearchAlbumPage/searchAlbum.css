@@ -1,0 +1,23 @@
+.album-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+   padding: 12px;
+   color: var(--css-white)
+}
+.album-items{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.album-start-item{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.album-follow{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+}

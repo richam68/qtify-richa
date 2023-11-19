@@ -2,11 +2,11 @@
 import "./cards.css";
 
 
-export default function Card({imageSrc, follows, title}) {
+export default function Card({imageSrc, follows, title, type}) {
 
   return (
-    <div className="card-wrapper">
-      <div className="card">
+    <div className="card-wrapper" type={type}>
+      <div className="card" >
         <div className="card-img-frame" >
           <img
             src={imageSrc}
@@ -15,7 +15,7 @@ export default function Card({imageSrc, follows, title}) {
         </div>
         <div className="card-content">
           <span className="card-pill">
-           {follows}
+           {follows} 
            </span>
         </div>
       </div>

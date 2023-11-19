@@ -1,0 +1,12 @@
+.accordion-container{
+    background-color: var(--css-black);
+    display: flex;
+    justify-content: center;
+}
+h4{
+    font-size: 30px;
+    font-weight: 600;
+    color: var(--css-white);
+    display: flex;
+    justify-content: center;
+}
