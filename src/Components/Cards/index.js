@@ -14,9 +14,10 @@ export default function Card({imageSrc, follows, title, type}) {
           />
         </div>
         <div className="card-content">
-          <span className="card-pill">
-           {follows} 
+         <span className="card-pill">
+           {follows} Follows
            </span>
+          
         </div>
       </div>
 

@@ -46,7 +46,7 @@ export default function Section({
               <Card
                 key={index}
                 imageSrc={cardItems.image}
-                follows ={cardItems.follows ? (cardItems.follows) : (cardItems.likes)} 
+                follows ={cardItems.follows ? cardItems.follows : cardItems.likes} 
                 title={cardItems.title}
                 type={type}
               />
