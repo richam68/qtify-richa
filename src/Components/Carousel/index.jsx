@@ -21,16 +21,20 @@ const Carousel = ({ data }) => {
         //   navigation={true}
         navigation={{ prevEl: ".arrow-left", nextEl: ".arrow-right" }}
       >
-        {data.map((slideContent, index) => (
-          <SwiperSlide key={index}>
-            <Card
-              key={slideContent.id}
-              imageSrc={slideContent.image}
-              follows={slideContent.follows}
-              title={slideContent.title}
-            />
-          </SwiperSlide>
-        ))}
+        {data.map((slideContent, index) => {
+          // console.log("carousel", slideContent.songs);
+          return (
+            <SwiperSlide key={index}>
+              <Card
+                key={slideContent.id}
+                imageSrc={slideContent.image}
+                follows={slideContent.follows}
+                title={slideContent.title}
+                totalNoSongs={slideContent.songs && slideContent.songs.length}
+              />
+            </SwiperSlide>
+          );
+        })}
         <button className="arrow-left arrow">
           <LeftIcon />
         </button>

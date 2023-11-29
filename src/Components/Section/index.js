@@ -2,21 +2,14 @@ import React, { useState } from "react";
 import Card from "../Cards";
 import Carousel from "../Carousel";
 import "./section.css";
-import Tabs from "../Tabs";
 
-export default function Section({
-  title,
-  data,
-  type,
-  filteredDataValues,
-  value = 0,
-  handleChange = null,
-}) {
+export default function Section({ title, data, type }) {
   const [isCollapse, setIsCollapse] = useState(false);
 
   const handleShowHide = () => {
     setIsCollapse(!isCollapse);
   };
+  console.log("checking data", data);
 
   return (
     <div className="section">
@@ -33,22 +26,23 @@ export default function Section({
         )}
       </div>
 
-      {type === "songs" ? (
-        <Tabs value={value} handleChange={handleChange} />
-      ) : null}
-
       {!isCollapse ? (
         <Carousel data={data} />
       ) : (
         <div className="card-container">
           {data.map((cardItems, index) => {
+            // console.log("song length", cardItems.songs);
+            // console.log("song length", cardItems.songs.length);
             return (
               <Card
                 key={index}
                 imageSrc={cardItems.image}
-                follows ={cardItems.follows ? cardItems.follows : cardItems.likes} 
+                follows={
+                  cardItems.follows ? cardItems.follows : cardItems.likes
+                }
                 title={cardItems.title}
                 type={type}
+                totalNoSongs={cardItems.songs.length}
               />
             );
           })}

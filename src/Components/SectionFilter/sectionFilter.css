@@ -1,0 +1,13 @@
+.section {
+  background-color: var(--css-black);
+  margin-top: -8px;
+  padding-left: 6px;
+}
+.title {
+  font-size: 12px;
+  color: var(--css-white);
+}
+.tab {
+  color: var(--css-white) !important;
+  font-weight: bold !important;
+}

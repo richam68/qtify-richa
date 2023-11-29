@@ -8,7 +8,7 @@ export default function SearchBox({ topAlbum, setTopAlbum }) {
   const [filterSearch, setFilterSearch] = useState(null);
   const [popup, setpopup] = useState(false);
 
-  console.log("Search page", topAlbum);
+  // console.log("Search page", topAlbum);
 
   const handleChange = (e) => {
     // console.log(e.target.value);

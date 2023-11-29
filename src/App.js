@@ -4,6 +4,7 @@ import HeroSection from "./Components/HeroSection";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Section from "./Components/Section";
+import SectionFilter from "./Components/SectionFilter";
 import Accordion from "./Components/Accordion";
 
 let ENDPOINT = "https://qtify-backend-labs.crio.do/";
@@ -11,8 +12,8 @@ function App() {
   const [topAlbum, setTopAlbum] = useState([]);
   const [newAlbum, setNewAlbum] = useState([]);
   const [songs, setSongs] = useState([]);
-  const [filteredDataValues, setFilteredDataValues] = useState([]);
-  const [value, setValue] = useState(0);
+  const [genre, setGenre] = useState([]);
+  const [filteredSongs, setFilteredSongs] = useState([]);
 
   const topAlbumApi = async () => {
     await axios
@@ -40,60 +41,44 @@ function App() {
   const songsAlbum = async () => {
     await axios.get(`${ENDPOINT}songs`).then((res) => {
       setSongs(res.data);
-      setFilteredDataValues(res.data);
+      setFilteredSongs(res.data);
     });
   };
-
+  const genreType = async () => {
+    await axios.get(`${ENDPOINT}genres`).then((res) => {
+      setGenre([
+        {
+          key: "all",
+          label: "All",
+        },
+        ...res.data.data,
+      ]);
+    });
+  };
   useEffect(() => {
     topAlbumApi();
-    newAlbumApi()
-    songsAlbum()
+    newAlbumApi();
+    songsAlbum();
+    genreType();
   }, []);
-
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
-
-  // const mergingData = [...topAlbum, ...newAlbum, ...songs];
-
-  let generateSongsData = (value) => {
-    let key;
-    if (value === 0) {
-      filterData(songs);
-      return;
-    } else if (value === 1) {
-      key = "rock";
-    } else if (value === 2) {
-      key = "pop";
-    } else if (value === 3) {
-      key = "jazz";
-    } else {
-      key = "blues";
-    }
-
-    let filteredSongs = songs.filter((songItem) => songItem.genre.key === key);
-    filterData(filteredSongs);
-  };
-
-  let filterData = (val) => {
-    setFilteredDataValues(val);
-  };
-  useEffect(() => {
-    generateSongsData(value);
-  },[value]);
-
   return (
     <div>
       <Navbar topAlbum={topAlbum} setTopAlbum={setTopAlbum} />
       <HeroSection />
       <Section title="Top Album" type="topAlbum" data={topAlbum} />
       <Section title="New Album" type="newAlbum" data={newAlbum} />
-      <Section
+      <SectionFilter
         title="Songs"
-        type="songs"
-        data={filteredDataValues}
-        value={value}
-        handleChange={handleChange}
+        type="Songs"
+        data={filteredSongs}
+        genre={genre}
+        executeFilterSongs={(genre) => {
+          if (genre === "all") {
+            setFilteredSongs(songs);
+          } else {
+            setFilteredSongs(songs.filter((song) => song.genre.key === genre));
+          }
+        }}
       />
       <Accordion />
     </div>
