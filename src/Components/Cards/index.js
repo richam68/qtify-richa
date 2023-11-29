@@ -14,10 +14,13 @@ const BootstrapTooltip = styled(({ className, ...props }) => (
 }));
 
 export default function Card({ imageSrc, follows, title, type, totalNoSongs }) {
-  console.log("checking from card page", totalNoSongs);
   return (
     <div className="card-wrapper" type={type}>
-      <BootstrapTooltip title={`${totalNoSongs} Songs`} placement="top">
+      <BootstrapTooltip
+        key={type}
+        title={`${totalNoSongs} Songs`}
+        placement="top"
+      >
         <div className="card">
           <div className="card-img-frame">
             <img src={imageSrc} alt="card-pic" />

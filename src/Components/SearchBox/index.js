@@ -2,16 +2,13 @@ import { ReactComponent as SearchIcon } from "./search-icon.svg";
 import "./searchbox.css";
 import { useEffect, useState } from "react";
 import SearchAlbumPage from "../SearchAlbumPage";
-import axios from "axios";
+
 export default function SearchBox({ topAlbum, setTopAlbum }) {
   const [title, setTitle] = useState("");
   const [filterSearch, setFilterSearch] = useState(null);
   const [popup, setpopup] = useState(false);
 
-  // console.log("Search page", topAlbum);
-
   const handleChange = (e) => {
-    // console.log(e.target.value);
     setTitle(e.target.value);
     setpopup(true);
 
@@ -19,22 +16,23 @@ export default function SearchBox({ topAlbum, setTopAlbum }) {
       return item.title.toLowerCase().includes(e.target.value.toLowerCase());
     });
     setFilterSearch(filter);
-    // console.log("filter data", filter);
   };
 
-  const searchApi = async () => {
-    // console.log("search api function");
-    let res = await axios.get(`https://qtify-backend-labs.crio.do/albums/top`);
-    setFilterSearch(res.data);
-  };
+  // const searchApi = async () => {
+  //   // console.log("search api function");
+  //   let res = await axios.get(`https://qtify-backend-labs.crio.do/albums/top`);
+  //   setFilterSearch(res.data);
+  // };
 
   useEffect(() => {
-    // console.log("useEffect");
-    searchApi();
-  }, [title]);
+    // console.log("filter serach");
+    if (!title) {
+      setFilterSearch(topAlbum);
+    }
+  }, [title, topAlbum]);
 
   return (
-    <>
+    <div className="search-wrapper">
       <form className="search">
         <input
           type="text"
@@ -56,6 +54,6 @@ export default function SearchBox({ topAlbum, setTopAlbum }) {
           ) : null}
         </>
       )}
-    </>
+    </div>
   );
 }

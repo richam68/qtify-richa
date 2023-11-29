@@ -9,7 +9,6 @@ export default function Section({ title, data, type }) {
   const handleShowHide = () => {
     setIsCollapse(!isCollapse);
   };
-  console.log("checking data", data);
 
   return (
     <div className="section">

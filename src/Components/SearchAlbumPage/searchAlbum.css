@@ -1,23 +1,25 @@
-.album-container{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-   padding: 12px;
-   color: var(--css-white)
+.album-items {
+  height: 96px;
+  width: 100%;
+  border: 1px solid var(--css-white);
+  color: var(--css-white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.album-items{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.image-wrapper {
+  width: 80px;
+  height: 100%;
 }
-.album-start-item{
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
+.title-wrapper {
+  flex: 1;
+  padding: 5px;
 }
-.album-follow{
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
+.follows-wrapper {
+  width: 100px;
+  height: 100%;
 
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

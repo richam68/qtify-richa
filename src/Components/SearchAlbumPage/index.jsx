@@ -1,22 +1,24 @@
 import React from "react";
 import "./searchAlbum.css";
+
 const SearchAlbumPage = ({ filterSearch }) => {
-  // console.log(">>>", filterSearch)
   return (
-    <div className="album-container">
+    <>
       {filterSearch.map((item, index) => {
-        // console.log("item in search album", item)
         return (
-          <div key={index} className="album-section">
-            <div className="album-start-item">
-              <img src={item.image} alt="album" width={40} height={40} />
-              <p>{item.title}</p>
+          <div key={item.id} className="album-items">
+            <div className="image-wrapper">
+              <img src={item.image} alt="album" />
             </div>
-            <p className="album-follow">{item.follows} Follows</p>
+            <div className="title-wrapper">
+              <p className="title">{item.title}</p>
+              <p>{item.songs.artists}</p>
+            </div>
+            <div className="follows-wrapper">{item.follows} Follows</div>
           </div>
         );
       })}
-    </div>
+    </>
   );
 };
 

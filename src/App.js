@@ -14,12 +14,12 @@ function App() {
   const [songs, setSongs] = useState([]);
   const [genre, setGenre] = useState([]);
   const [filteredSongs, setFilteredSongs] = useState([]);
-
+  let mergeAlbum = [...topAlbum, ...newAlbum];
   const topAlbumApi = async () => {
     await axios
       .get(`${ENDPOINT}albums/top`)
       .then(({ data }) => {
-        console.log("data", data);
+        // console.log("data", data);
         setTopAlbum(data);
       })
       .catch((error) => {
@@ -63,7 +63,7 @@ function App() {
   }, []);
   return (
     <div>
-      <Navbar topAlbum={topAlbum} setTopAlbum={setTopAlbum} />
+      <Navbar topAlbum={mergeAlbum} setTopAlbum={setTopAlbum} />
       <HeroSection />
       <Section title="Top Album" type="topAlbum" data={topAlbum} />
       <Section title="New Album" type="newAlbum" data={newAlbum} />
